@@ -3,11 +3,6 @@ from bs4 import BeautifulSoup
 
 url = 'https://verify.iebc.or.ke/index.php/webapi/submit_voter'
 
-payload = {}
-payload['idno'] = '3574020'
-payload['yob'] = '1998'
-
-
 def makeRequest(payload):
     return requests.post(url,data=payload)
     
