@@ -12,7 +12,7 @@ def scrap(html_content):
     # finding elements
     h2 = soup.find('h2')
     if h2.text != 'Voter found! Details as below:':
-        return {'msg':'Voter Not Found'}
+        return {'msg':'Voter Not Found','data':[]}
     # getting details
 
     table = soup.select('table.table-striped > tr > td > b')
@@ -25,11 +25,6 @@ def scrap(html_content):
 def execute(payload):
     req = makeRequest(payload)
     if req.status_code == 200:
-        scrapped = scrap(req.content.decode('utf-8'))
-        if scrapped['msg'] == 'Success':
-            print('Voter Found')
-            print(scrapped['data'])
-        else:
-            print(scrapped['msg'])
+        return scrap(req.content.decode('utf-8'))
     else:
-        print('Result Not Found')
+        return {'msg':404,'data':[]}
