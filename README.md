@@ -5,5 +5,5 @@
 - `Create Virtual Env & Install  Packages`
 - `Create folder 'csv' on the root folder`
 - `Upload excel file inside csv folder`
-- `Run 'python test.py' & enter fullname of uploaded file `
+- `Run 'python excel.py' & enter fullname of uploaded file `
 - `Generated Excel File would be inside the folder created names 'results & current timestamp'`
